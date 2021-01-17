@@ -40,10 +40,10 @@
   }
 
   &__title {
-    color: $darkBlue;
+    font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.15;
-    font-size: 1.25rem;
+    color: $darkBlue;
     margin-bottom: 1rem;
 
     @include breakpoint-up(large) {
@@ -53,7 +53,7 @@
   }
 
   &__description {
-    font-size: $font-sm;
+    font-size: 0.875rem;
     line-height: 1.5;
   }
 }

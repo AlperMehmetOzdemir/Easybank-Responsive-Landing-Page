@@ -1,6 +1,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  max-width: 100vw;
 }
 
 *,
@@ -13,10 +14,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Public Sans", sans-serif;
-  font-size: $font-med;
+  font-size: $font-sm;
   font-weight: 300;
   color: $grayishBlue;
   line-height: 1.3;
+  overflow-x: hidden;
+
+  @include breakpoint-up(large) {
+    font-size: $font-med;
+  }
 
   &.noscroll {
     overflow: hidden;
@@ -27,10 +33,10 @@ body {
 h1,
 h2,
 h3 {
-  margin-top: 0px;
   font-weight: 300;
   line-height: 1.15;
   color: $darkBlue;
+  margin-top: 0px;
 }
 
 h1 {
@@ -53,13 +59,8 @@ h2 {
 }
 
 p {
-  font-size: $font-sm;
   line-height: 1.5;
   margin-bottom: 2.25rem;
-
-  @include breakpoint-up(large) {
-    font-size: $font-lg;
-  }
 }
 
 a,
@@ -137,18 +138,33 @@ a:hover {
 // Buttons
 button,
 .button {
+  position: relative;
+  display: inline-block;
   padding: 0.875rem 2.1875rem;
-  font-size: $font-sm;
   background: linear-gradient(to right, $limeGreen, $brightCyan);
+  border: 0;
   border-radius: 50px;
-  border: none;
-  font-weight: 400;
-  color: $white;
   cursor: pointer;
+  color: $white;
+  font-weight: 400;
+  font-size: $font-sm;
   transition: opacity 300ms ease-in-out;
+  overflow: hidden;
 
-  &:hover {
-    opacity: 0.75;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 }
 

@@ -1,6 +1,7 @@
 .hero {
   background-color: $veryLightGray;
   .container {
+    overflow-x: hidden;
     @include breakpoint-up(large) {
       display: flex;
       align-items: center;
@@ -12,6 +13,7 @@
     background-image: url("/images/bg-intro-mobile.svg");
     background-size: cover;
     background-repeat: no-repeat;
+
     background-position: center center;
     min-height: 17.5rem;
 
