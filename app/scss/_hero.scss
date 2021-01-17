@@ -1,9 +1,10 @@
 .hero {
   background-color: $veryLightGray;
+  overflow: hidden;
   .container {
-    overflow-x: hidden;
     @include breakpoint-up(large) {
       display: flex;
+      overflow-y: visible;
       align-items: center;
     }
   }

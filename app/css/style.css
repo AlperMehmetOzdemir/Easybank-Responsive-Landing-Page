@@ -350,15 +350,13 @@ button:hover::before,
 
 .hero {
   background-color: #fafafa;
-}
-
-.hero .container {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @media (min-width: 64em) {
   .hero .container {
     display: flex;
+    overflow-y: visible;
     align-items: center;
   }
 }
